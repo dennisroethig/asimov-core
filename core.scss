@@ -3,7 +3,10 @@
 @import "sass-import-once/sass-import-once";
 @import "compass-breakpoint/stylesheets/breakpoint";
 
-$settings: () !default !global;
+@if not global-variable-exists('settings') {
+    $settings: () !default !global;
+}
+
 $debug: false !default !global;
 
 // Internal caching get sass iteration be slow!
